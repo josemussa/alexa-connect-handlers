@@ -9,7 +9,9 @@ Bind context and other arguments to your [alexa-sdk](https://github.com/alexa/al
 * Bind the context into the extra arguments.
 
 ## Install
-`npm i alexa-connect-handlers --save`
+```
+npm i alexa-connect-handlers --save
+```
 
 ## Usage
 
