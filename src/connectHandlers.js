@@ -1,4 +1,6 @@
-import { isFunction, isObject, mapValues } from 'lodash';
+import isFunction from 'lodash/isFunction';
+import isObject from 'lodash/isObject';
+import mapValues from 'lodash/mapValues';
 
 const handleExtraArguments = (value, context) => {
     if (isFunction(value)) {
