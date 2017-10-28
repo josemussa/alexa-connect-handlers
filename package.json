@@ -6,7 +6,7 @@
   "scripts": {
     "compile": "babel -d lib/ src/",
     "dev": "webpack --progress --colors --watch --env dev",
-    "test": "mocha --compilers js:babel-core/register --colors ./test/**/**.spec.js",
+    "test": "npm run compile && mocha --compilers js:babel-core/register --colors ./test/**/**.spec.js",
     "coverage": "nyc npm test && codecov",
     "test:watch": "mocha --compilers js:babel-core/register --colors -w ./test/*.spec.js",
     "lint": "eslint ./src"
