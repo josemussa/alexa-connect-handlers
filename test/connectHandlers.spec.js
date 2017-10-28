@@ -39,7 +39,7 @@ describe('connectHandlers', () => {
         expect(context.handler()).to.equal('test connectHandlers');
     });
 
-    it('Should bind context to extra arguments', () => {
+    it('Should bind context to extra arguments using a nested function', () => {
         const handler = ({ test }, { testToUppercase }) => testToUppercase();
         const extraArguments = { testToUppercase: () => ({ test }) => test.toUpperCase() };
         const context = {
@@ -48,5 +48,16 @@ describe('connectHandlers', () => {
         };
 
         expect(context.handler()).to.equal('TEST');
+    });
+
+    it('Should bind context to extra arguments using a regular function', () => {
+        const handler = ({ test }, { testToUppercase }) => testToUppercase('hello');
+        const extraArguments = { testToUppercase: (stringArgument) => stringArgument.toUpperCase() };
+        const context = {
+            test: 'test',
+            handler: connect(handler, extraArguments),
+        };
+
+        expect(context.handler()).to.equal('HELLO');
     });
 });
