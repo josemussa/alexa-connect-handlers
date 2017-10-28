@@ -1,6 +1,6 @@
 {
   "name": "alexa-connect-handlers",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Bind context and other arguments to your handlers using a functional approach",
   "main": "lib/connectHandlers.js",
   "scripts": {
