@@ -1,0 +1,7 @@
+**/.*
+src/
+webpack.*.js
+coverage/
+examples/
+node_modules/
+test/
