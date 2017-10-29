@@ -21,11 +21,11 @@ const mapExtraArguments = (extraArguments, context) =>
         ? mapValues(extraArguments, value => handleExtraArguments(value, context))
         : {});
 
+const connect = () => {
+    const context = this;
+    const args = mapValues(context, value => (isFunction(value) ? value.bind(context) : value));
+    return handler(args, mapExtraArguments(props, this));
+}
 export default function createConnect(handler, props) {
-    return function connect() {
-        const context = this;
-        const args = mapValues(context, value => (isFunction(value) ? value.bind(context) : value));
-
-        return handler(args, mapExtraArguments(props, this));
-    };
+    return connect;
 }
