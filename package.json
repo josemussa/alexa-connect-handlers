@@ -47,5 +47,8 @@
   "bugs": {
     "url": "https://github.com/josemussa/alexa-connect-handlers/issues"
   },
-  "homepage": "https://github.com/josemussa/alexa-connect-handlers"
+  "homepage": "https://github.com/josemussa/alexa-connect-handlers",
+  "dependencies": {
+    "lodash": "~4.17.4"
+  }
 }
