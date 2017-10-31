@@ -2,6 +2,26 @@ import isFunction from 'lodash/isFunction';
 import isObject from 'lodash/isObject';
 import mapValues from 'lodash/mapValues';
 
+export function mapToHandlers(handlers, properties = {}) {
+    if (!isObject(handlers)) {
+        throw new Error('Handlers should be an object');
+    }
+
+    return mapValues(handlers, (handler) => {
+        if (!isFunction(handler)) {
+            throw new Error('Handler should be a function');
+        }
+
+        if (!isObject(properties)) {
+            throw new Error('Properties should be an object');
+        }
+
+        return function () {
+            return handler.call(Object.assign({}, this, properties));
+        };
+    });
+}
+
 const handleExtraArguments = (value, context) => {
     if (isFunction(value)) {
         return (params) => {
@@ -16,16 +36,19 @@ const handleExtraArguments = (value, context) => {
     return value;
 };
 
-const mapExtraArguments = (extraArguments, context) =>
-    (isObject(extraArguments)
-        ? mapValues(extraArguments, value => handleExtraArguments(value, context))
-        : {});
+const mapExtraArguments = (extraArguments, context) => {
+    if (!isObject(extraArguments)) {
+        throw new Error('extraArguments should be an object');
+    }
 
-export default function createConnect(handler, props) {
+    return mapValues(extraArguments, value => handleExtraArguments(value, context));
+};
+
+export default function createConnect(handler, properties) {
     return function connect() {
         const context = this;
         const args = mapValues(context, value => (isFunction(value) ? value.bind(context) : value));
 
-        return handler(args, mapExtraArguments(props, this));
+        return handler(args, properties ? mapExtraArguments(properties, this) : {});
     };
 }
