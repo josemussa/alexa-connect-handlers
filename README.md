@@ -15,7 +15,11 @@ Bind context and other arguments to your [alexa-sdk](https://github.com/alexa/al
 ```
 npm i alexa-connect-handlers --save
 ```
-## mapToHandlers
+## Description
+
+`alexa-connect-handlers` consist on two basic functions, `mapToHandlers` and `connect` 
+
+## [Function] mapToHandlers
 
 `mapToHandlers` accepts your handlers object as the first argument and an object as the second argument, this function will bind your properties to the function context so later you can use them on your handlers, I wrote this function to pass properties before registering your handlers, eg.
 
@@ -38,7 +42,7 @@ exports.handler = (event, context) => {
 };
 
 ```
-## connect
+## [Function] connect
 
 Wrap your handler using the Higher-Order function `connect` to bind the context to the first argument of the function, you can invoke [alexa-sdk](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs) properties from here like `response`, `emit`, `attributes`, `t`.
 
