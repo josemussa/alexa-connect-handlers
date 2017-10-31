@@ -4,17 +4,24 @@
     "description": "Project sample for alexa-connect-handlers",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "lint": "eslint src/",
+        "test": "lambda-local -l dist/index.js -e ./lambda-test-events/PersonalInfoIntent.js -t 5",
+        "build": "webpack"
     },
     "author": "José Mussa",
     "license": "MIT",
     "dependencies": {
-        "alexa-connect-handlers": "^0.0.4",
-        "alexa-sdk": "^1.0.0",
-        "axios": "~0.16.2"
+        "alexa-connect-handlers": "0.0.5",
+        "alexa-sdk": "~1.0.17",
+        "axios": "~0.16.2",
+        "babel-polyfill": "~6.26.0"
     },
     "devDependencies": {
         "alexa-skill-test-framework": "~1.1.2",
+        "babel-plugin-transform-class-properties": "~6.24.1",
+        "babel-plugin-transform-function-bind": "~6.22.0",
+        "babel-plugin-transform-object-rest-spread": "~6.26.0",
+        "lambda-local": "~1.4.4",
         "webpack": "~3.7.1"
     }
 }

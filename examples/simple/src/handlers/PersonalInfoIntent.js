@@ -11,6 +11,6 @@ const PersonalInfoIntent = ({ response, emit }, { fetchPersonalInfo }) =>
             response.speak(`Hello, your name is: ${name}`);
             return emit(':responseReady');
         })
-        .catch(error => emit(':responseReady'));
+        .catch(() => emit(':responseReady'));
 
-export default connect(MenuForWeekIntent, { fetchPersonalInfo });
+export default connect(PersonalInfoIntent, { fetchPersonalInfo });
