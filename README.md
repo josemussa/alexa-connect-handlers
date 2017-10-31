@@ -3,7 +3,7 @@
 
 Bind context and other arguments to your [alexa-sdk](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs) handlers using a functional approach.
 
-> [You can see a working example here](https://github.com/josemussa/alexa-connect-handlers/tree/master/examples)
+> [You can see a working example here.](https://github.com/josemussa/alexa-connect-handlers/tree/master/examples)
 
 ## Features
 
