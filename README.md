@@ -36,7 +36,7 @@ exports.handler = (event, context) => {
     // We create the instance of the class here.
     const client = new RestClient({
         tokenType: 'Bearer',
-        accessToken: '123',
+        accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9',
     });
 
     // this is where we bind the instance to our handlers.
