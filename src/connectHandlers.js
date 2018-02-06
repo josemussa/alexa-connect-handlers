@@ -1,6 +1,6 @@
-import isFunction from 'lodash/isFunction';
-import isObject from 'lodash/isObject';
-import mapValues from 'lodash/mapValues';
+import mapValues from 'lodash.mapvalues';
+import isFunction from 'lodash.isFunction';
+import isObject from 'lodash.isObject';
 
 export function mapToHandlers(handlers, properties = {}) {
     if (!isObject(handlers)) {
