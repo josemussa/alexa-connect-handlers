@@ -4,7 +4,7 @@
   "description": "Bind context and other arguments to your handlers using a functional approach",
   "main": "lib/connectHandlers.js",
   "scripts": {
-    "compile": "webpack --progress --colors",
+    "compile": "babel -d lib/ src/",
     "dev": "webpack --progress --colors --watch",
     "test": "npm run compile && mocha --compilers js:babel-core/register --colors ./test/**/**.spec.js",
     "coverage": "nyc npm test && codecov",
