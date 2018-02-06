@@ -11,7 +11,7 @@
     "author": "José Mussa",
     "license": "MIT",
     "dependencies": {
-        "alexa-connect-handlers": "0.0.5",
+        "alexa-connect-handlers": "0.0.8",
         "alexa-sdk": "~1.0.17",
         "axios": "~0.16.2",
         "babel-polyfill": "~6.26.0"
