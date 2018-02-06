@@ -33,9 +33,4 @@
         'babel',
     ],
     globals: {},
-    settings: {
-        'import/resolver': {
-            'babel-module': {},
-        },
-    },
 }
