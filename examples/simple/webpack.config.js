@@ -24,9 +24,6 @@ module.exports = (() => {
                     test: /\.js$/,
                     use: {
                         loader: 'babel-loader',
-                        options: {
-                            presets: ['node6'],
-                        },
                     },
                     include: [srcPath],
                 },
