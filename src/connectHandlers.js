@@ -1,6 +1,6 @@
-import isFunction from 'lodash/isFunction';
-import isObject from 'lodash/isObject';
-import mapValues from 'lodash/mapValues';
+import mapValues from 'lodash.mapvalues';
+import isFunction from 'lodash.isFunction';
+import isObject from 'lodash.isObject';
 
 export function mapToHandlers(handlers, properties = {}) {
     if (!isObject(handlers)) {
@@ -16,7 +16,7 @@ export function mapToHandlers(handlers, properties = {}) {
             throw new Error('Properties should be an object');
         }
 
-        return function () {
+        return function callProperties() {
             return handler.call(Object.assign({}, this, properties));
         };
     });

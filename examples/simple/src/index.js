@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 import Alexa from 'alexa-sdk';
 import { mapToHandlers } from 'alexa-connect-handlers';
 import handlers from './handlers';
